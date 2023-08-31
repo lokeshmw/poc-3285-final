@@ -11,6 +11,7 @@ def step_impl(context):
 
 @when(u'I enter valid phone number as "{number}" and valid password as "{password}" into the fields')
 def step_impl(context, number, password):
+    time.sleep(20)
     context.login_page.enter_phone(number)
     context.login_page.enter_password(password)
 

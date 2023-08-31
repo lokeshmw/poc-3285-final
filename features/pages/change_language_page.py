@@ -21,7 +21,7 @@ class Change_language(BasePage):
     def change_language(self):
         languages = self.get_elements("all_language_xpath", self.all_language_xpath)
         for i in languages:
-            if "HI" in i.text:
+            if "EN" in i.text:
                 i.click()
         self.click_on_element("confirm_xpath", self.confirm_xpath)
 
