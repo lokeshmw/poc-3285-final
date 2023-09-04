@@ -1,3 +1,5 @@
+import time
+
 import allure
 from allure_commons.types import AttachmentType
 from selenium import webdriver
@@ -15,6 +17,7 @@ def before_scenario(context, driver):
         context.driver = webdriver.Edge()
 
     context.driver.maximize_window()
+    time.sleep(25)
     context.driver.get(config_reader.read_configuration("basic info", "url"))
 
 

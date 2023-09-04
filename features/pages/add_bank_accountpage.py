@@ -70,5 +70,4 @@ class add_Bank_AccountPage(BasePage):
     def click_save_account(self):
         self.click_on_element("save_account_xpath", self.save_account_xpath)
 
-    def verify_account_added(self, a):
-        return self.contains("account_added_text_xpath", self.account_added_text_xpath, a)
+

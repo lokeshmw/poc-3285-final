@@ -12,8 +12,8 @@ class SearchPage(BasePage):
     invalid_product_search_xpath = "//div[.='No results for 424424sssssssss.']"
     blank_search_verify_xpath = "//div[@class='nav-search-field ']/input[@aria-label='Search Amazon.in']"
 
-    def verify_search(self, a):
-        return self.text_equal("search_xpath", self.search_xpath, a)
+    def verify_search(self):
+        return self.text_equal("search_xpath", self.search_xpath, "Apple iPhone 14 Pro Max (256 GB) - Gold")
 
     def verify_search_for_invalidProduct(self):
         return self.display("invalid_product_search_xpath", self.invalid_product_search_xpath)

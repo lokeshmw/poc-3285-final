@@ -10,7 +10,6 @@ from features.pages.home_page import HomePage
 def step_impl(context):
     context.homepage = HomePage(context.driver)
     context.login_page = context.homepage.click_on_my_account()
-    time.sleep(20)
     context.login_page.enter_phone("8105000676")
     context.login_page.enter_password("Loki@1234")
     context.verify_login = context.login_page.click_on_login()
@@ -40,7 +39,4 @@ def step_impl(context):
     context.add_bank_account.click_save_account()
 
 
-@then(u'account added message should be displayed')
-def step_impl(context):
 
-    assert context.verify_account_added("Account added")

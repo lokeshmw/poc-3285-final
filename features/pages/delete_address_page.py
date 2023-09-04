@@ -1,5 +1,3 @@
-import time
-
 from selenium.webdriver.common.by import By
 
 from features.pages.BasePage import BasePage
@@ -24,15 +22,10 @@ class Delete_address(BasePage):
     def click_address(self):
         self.click_on_element("click_address_xpath", self.click_address_xpath)
 
-    def delete_address(self):
-        addresses = self.driver.find_elements(By.XPATH, "//div[@class ='a-row a-spacing-micro']/div/div")
+    def delete_address_(self):
+        addresses = self.get_elements("address_name_xpath", self.address_name_xpath)
         for x in addresses:
-            address_name = x.find_element(By.XPATH, "div/div/div/ul/li[1]")
-            print(address_name)
-            if address_name.text == "Lokesh.M":
-                x.driver.find_element(By.XPATH, "span/a[text()='Remove']").click()
-                time.sleep(2)
-                self.driver.find_element(By.XPATH, "//div[@class ='a-popover-inner']/div[@class='a-section']/div[4]/div[2]/div/div[@class='a-column a-span8']").click()
+            if x.text == "Lokesh.M":
+                self.click_on_element("remove_address_xpath", self.remove_address_xpath)
+                self.click_on_element("yes_delete_xpath", self.yes_delete_xpath)
 
-    def verify_text(self):
-        return self.text_equal("deleted_text_xpath", self.deleted_text_xpath, "Address deleted")

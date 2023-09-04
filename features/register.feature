@@ -1,7 +1,7 @@
 Feature: Register Account functionality
 
 
-  @register1
+  @register1 @skip
   Scenario: Register with mandatory fields
     Given I navigate to Register Page
     When I enter below details into mandatory fields

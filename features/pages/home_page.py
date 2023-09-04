@@ -1,3 +1,5 @@
+import time
+
 from features.pages.BasePage import BasePage
 from features.pages.login_page import LoginPage
 from features.pages.search_page import SearchPage

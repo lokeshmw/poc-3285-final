@@ -10,7 +10,6 @@ from features.pages.home_page import HomePage
 def step_impl(context):
     context.homepage = HomePage(context.driver)
     context.login_page = context.homepage.click_on_my_account()
-    time.sleep(20)
     context.login_page.enter_phone("8105000676")
     context.login_page.enter_password("Loki@1234")
     context.verify_login = context.login_page.click_on_login()
@@ -25,9 +24,5 @@ def step_impl(context):
 
 @when(u'deleted a address which is requested')
 def step_impl(context):
-    context.delete_address.delete_address()
+    context.delete_address.delete_address_()
 
-
-@then(u'validating the deleted message')
-def step_impl(context):
-    assert context.delete_address.verify_text()

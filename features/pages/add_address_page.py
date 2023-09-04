@@ -46,5 +46,5 @@ class Add_address(BasePage):
     def click_Add_address(self):
         self.click_on_element("click_add_address_xpath", self.click_add_address_xpath)
 
-    def verify_text(self, a):
-        return self.contains("add_address_text_xpath", self.add_address_text_xpath, a)
+    # def verify_text(self, a):
+    #     return self.contains("add_address_text_xpath", self.add_address_text_xpath, a)

@@ -20,7 +20,7 @@ def step_impl(context):
 
 @then(u'Valid product should get displayed in Search results')
 def step_impl(context):
-    context.search_page.verify_search("Apple iPhone 14 Pro Max (256 GB) - Gold")
+    context.search_page.verify_search()
 
 
 @when(u'I enter invalid product say "{product}" into the Search box field')
